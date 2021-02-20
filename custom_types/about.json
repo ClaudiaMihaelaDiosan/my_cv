@@ -1,0 +1,94 @@
+{
+  "Main" : {
+    "about_me" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "about_me_img" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "about_me_img"
+            }
+          },
+          "about_me_title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "about_me_title"
+            }
+          },
+          "about_me_content" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label" : "about_me_content"
+            }
+          }
+        },
+        "label" : "about_me"
+      }
+    },
+    "education" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "education_img" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "education_img"
+            }
+          },
+          "education_title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "education_title"
+            }
+          },
+          "education_content" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label" : "education_content"
+            }
+          }
+        },
+        "label" : "education"
+      }
+    },
+    "experience" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "experience_img" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "experience_img"
+            }
+          },
+          "experience_title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "experience_title"
+            }
+          },
+          "experience_content" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label" : "experience_content"
+            }
+          }
+        },
+        "label" : "experience"
+      }
+    }
+  }
+}

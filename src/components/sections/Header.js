@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '@components/global';
+import Cake from '@material-ui/icons/CakeOutlined'
+import Location from '@material-ui/icons/LocationCityOutlined'
+import Email from '@material-ui/icons/EmailOutlined'
+import Phone from '@material-ui/icons/PhoneAndroidOutlined'
 
 const Header = ({headerContent}) => (
 
@@ -15,15 +19,13 @@ const Header = ({headerContent}) => (
           {headerContent.name.text}
           </h1>
           <br />
-          <p>
-          {headerContent.birthday.text}
+          <Cake/> {headerContent.birthday.text}
           <br />
-          {headerContent.location.text}
+          <Location/> {headerContent.location.text}
           <br />
-          {headerContent.email.text}
+          <Email/> {headerContent.email.text}
           <br />
-          {headerContent.phone_number.text}
-          </p>
+          <Phone/> {headerContent.phone_number.text}
         </Text>
           </Grid>
         </Container>
