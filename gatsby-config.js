@@ -61,5 +61,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'my-curriculum',
+        schemas: {
+           navigation: require("./custom_types/navigation.json"),
+        },
+      },
+    },
   ],
 };

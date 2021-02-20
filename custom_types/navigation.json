@@ -1,0 +1,33 @@
+{
+    "Main" : {
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "Title"
+        }
+      },
+      "top_navigation" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "link" : {
+              "type" : "Link",
+              "config" : {
+                "select" : "document",
+                "label" : "link"
+              }
+            },
+            "link_label" : {
+              "type" : "StructuredText",
+              "config" : {
+                "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                "label" : "link_label"
+              }
+            }
+          },
+          "label" : "top_navigation"
+        }
+      }
+    }
+  }
