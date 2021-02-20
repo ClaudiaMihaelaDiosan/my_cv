@@ -67,8 +67,10 @@ module.exports = {
         repositoryName: 'my-curriculum',
         schemas: {
            navigation: require("./custom_types/navigation.json"),
+           header: require("./custom_types/header.json"),
         },
       },
     },
+    `gatsby-plugin-material-ui`
   ],
 };

@@ -1,0 +1,55 @@
+{
+    "Main": {
+      "header": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "profile_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "profile_image"
+              }
+            },
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                "label": "Name"
+              }
+            },
+            "birthday": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                "label": "birthday"
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                "label": "location"
+              }
+            },
+            "email": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                "label": "email"
+              }
+            },
+            "phone_number": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                "label": "phone_number"
+              }
+            }
+          },
+          "label": "header"
+        }
+      }
+    }
+  }

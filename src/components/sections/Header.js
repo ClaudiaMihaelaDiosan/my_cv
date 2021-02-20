@@ -1,55 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-
 import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_build: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
+const Header = ({headerContent}) => (
+
       <HeaderWrapper>
         <Container>
           <Grid>
             <Art>
-              <Img fluid={data.art_build.childImageSharp.fluid} />
+              <img src={headerContent.profile_image.url} />
             </Art>
             <Text>
-              <h1>
-                Fast in
-                <br />
-                every way
-                <br />
-                that matters
-              </h1>
-              <br />
-              <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Check out source &nbsp;&#x2794;
-                </StyledExternalLink>
-              </p>
-            </Text>
+          <h1>
+          {headerContent.name.text}
+          </h1>
+          <br />
+          <p>
+          {headerContent.birthday.text}
+          <br />
+          {headerContent.location.text}
+          <br />
+          {headerContent.email.text}
+          <br />
+          {headerContent.phone_number.text}
+          </p>
+        </Text>
           </Grid>
         </Container>
       </HeaderWrapper>
-    )}
-  />
-);
+)
+
+
+
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};
@@ -95,15 +77,6 @@ const Text = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
-  }
-`;
-
-const StyledExternalLink = styled(ExternalLink)`
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    color: ${props => props.theme.color.black.regular};
   }
 `;
 
