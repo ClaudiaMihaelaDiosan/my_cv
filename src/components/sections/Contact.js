@@ -23,7 +23,7 @@ export default () => (
       try {
         await axios({
           method: 'POST',
-          url: `${process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}`,
+         
           headers: {
             'Content-Type': 'application/json',
           },
