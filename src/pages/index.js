@@ -7,7 +7,7 @@ import Navbar from '@common/Navbar';
 import Header from '@sections/Header';
 import About from '@sections/About';
 import Achievements from '@sections/Achievements';
-import Team from '@sections/Team';
+import Skills from '@sections/Skills';
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 
@@ -16,8 +16,9 @@ const IndexPage = ({data}) => {
   const document = data.allPrismicHeader.edges[0].node.data.header[0]
   const aboutDocument = data.allPrismicAbout.nodes[0].data
   const achievementsDocument = data.allPrismicAchievements.edges[0].node.data
+  const skillsDocument = data.allPrismicSkills.edges[0].node.data
 
-  console.log(achievementsDocument.achievements_link)
+ 
 
   const headerContent = {
     profile_image: document.profile_image,
@@ -43,10 +44,19 @@ const IndexPage = ({data}) => {
   const achievementsContent = {
     achievements_img: achievementsDocument.achievements_img,
     achievements_link: achievementsDocument.achievements_link,
-    //achievements_link_img: achievementsDocument.achievements_link[0].link_img,
     achievements_title: achievementsDocument.achievements_title
 
   }
+
+  const skillsContent = {
+    skills_title: skillsDocument.skills_title,
+    skills_img: skillsDocument.skills_img,
+    skill: skillsDocument.skill
+  }
+
+  console.log(skillsContent.skills_img)
+  console.log(skillsContent.skill)
+ 
 
 
   return (
@@ -55,7 +65,7 @@ const IndexPage = ({data}) => {
     <Header headerContent={headerContent}/>
     <About aboutContent={aboutContent}/>
     <Achievements achievementsContent={achievementsContent} />
-    <Team />
+    <Skills skillsContent={skillsContent} />
     <Faq />
     <Footer />
   </Layout>
@@ -161,6 +171,30 @@ query Header {
             }
           }
           achievements_title {
+            text
+          }
+        }
+      }
+    }
+  }
+  allPrismicSkills {
+    edges {
+      node {
+        data {
+          skill {
+            skill_img {
+              alt
+              url
+            }
+            skill_title {
+              text
+            }
+          }
+          skills_img {
+            alt
+            url
+          }
+          skills_title {
             text
           }
         }

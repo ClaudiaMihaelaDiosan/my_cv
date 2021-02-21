@@ -109,7 +109,7 @@ const StyledContainer = styled(Container)`
 const Art = styled.figure`
   width: 600px;
   position: absolute;
-  top: -12%;
+  top: 20%;
   right: 50%;
 
   @media (max-width: ${props => props.theme.screen.lg}) {

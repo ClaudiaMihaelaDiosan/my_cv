@@ -1,0 +1,42 @@
+{
+  "Main": {
+    "skills_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "skills_title"
+      }
+    },
+    "skill": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "skill_img": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "skill_img"
+            }
+          },
+          "skill_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "skill_title"
+            }
+          }
+        },
+        "label": "skill"
+      }
+    },
+    "skills_img": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "skills_img"
+      }
+    }
+  }
+}
