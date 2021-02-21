@@ -3,9 +3,16 @@ import axios from 'axios';
 import { Formik, Form, FastField, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import { Section, Container } from '@components/global';
+import Contact from '@images/contact/contact.png'
+
 
 export default () => (
-  <Formik
+  <Section id="contact" accent>
+    <StyledContainer>
+    <div>
+      <h1>Contact</h1>
+        <Formik
     initialValues={{
       name: '',
       email: '',
@@ -99,12 +106,47 @@ export default () => (
       </Form>
     )}
   </Formik>
+  </div>
+  <Art>
+  <img src={Contact} alt="Contact image" />
+  </Art>
+  </StyledContainer>
+</Section>
+
 );
 
 
 
+const Input = styled.input`
+  display: flex;
+  width: 180%;
+  box-sizing: border-box;
+  border: 2px solid #6c63ff;
+  padding: 0.8rem 1rem;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+  ${({ error }) =>
+    error &&
+    `
+		border-color: #BE1818;
+	`}
+  &::placeholder {
+    color: #a7a7a7;
+  }
+`;
+
+const StyledContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    justify-content: center;
+  }
+`;
+
  const Error = styled.span`
-  color: #ff4136;
+  color: #BE1818;
 `;
 
  const Center = styled.div`
@@ -117,6 +159,7 @@ export default () => (
  const InputField = styled.div`
   position: relative;
   margin-bottom: 1rem;
+  color: #000000 ;
 `;
 
 const ContactButton = styled.button`
@@ -146,20 +189,21 @@ const ContactButton = styled.button`
 	`}
 `;
 
-const Input = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #6c63ff;
-  padding: 0.8rem 1rem;
-  border-radius: 7px;
-  margin-bottom: 0.5rem;
-  transition: 0.3s;
-  ${({ error }) =>
-    error &&
-    `
-		border-color: #ff4136;
-	`}
-  &::placeholder {
-    color: #a7a7a7;
+
+
+const Art = styled.figure`
+  width: 600px;
+  position: absolute;
+  top: 20%;
+  right: 50%;
+
+  @media (max-width: ${props => props.theme.screen.lg}) {
+    top: 0;
+    right: 65%;
+    width: 500px;
+  }
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    display: none;
   }
 `;

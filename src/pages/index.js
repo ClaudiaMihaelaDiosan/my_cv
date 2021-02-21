@@ -9,7 +9,6 @@ import About from '@sections/About';
 import Achievements from '@sections/Achievements';
 import Skills from '@sections/Skills';
 import Contact from '@sections/Contact';
-import Footer from '@sections/Footer';
 
 
 const IndexPage = ({data}) => {
@@ -68,7 +67,6 @@ const IndexPage = ({data}) => {
     <Achievements achievementsContent={achievementsContent} />
     <Skills skillsContent={skillsContent} />
     <Contact/>
-    <Footer />
   </Layout>
   )
 
