@@ -6,7 +6,7 @@ import Navbar from '@common/Navbar';
 
 import Header from '@sections/Header';
 import About from '@sections/About';
-import Brands from '@sections/Brands';
+import Achievements from '@sections/Achievements';
 import Team from '@sections/Team';
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
@@ -14,7 +14,10 @@ import Footer from '@sections/Footer';
 const IndexPage = ({data}) => {
   if (!data) return null
   const document = data.allPrismicHeader.edges[0].node.data.header[0]
-  const aboutDocument = data.allPrismicAbout.edges[0].node.data
+  const aboutDocument = data.allPrismicAbout.nodes[0].data
+  const achievementsDocument = data.allPrismicAchievements.edges[0].node.data
+
+  console.log(achievementsDocument.achievements_title.text)
 
   const headerContent = {
     profile_image: document.profile_image,
@@ -37,13 +40,21 @@ const IndexPage = ({data}) => {
     experience_img: aboutDocument.experience[0].experience_img
   }
 
-  
+  const achievementsContent = {
+    achievements_img: achievementsDocument.achievements_img,
+    achievements_link: achievementsDocument.achievements_link[0].link,
+    achievements_link_img: achievementsDocument.achievements_link[0].link_img,
+    achievements_title: achievementsDocument.achievements_title
+
+  }
+
+
   return (
     <Layout>
     <Navbar />
     <Header headerContent={headerContent}/>
     <About aboutContent={aboutContent}/>
-    <Brands />
+    <Achievements achievementsContent={achievementsContent} />
     <Team />
     <Faq />
     <Footer />
@@ -56,44 +67,43 @@ const IndexPage = ({data}) => {
 export const query = graphql`
 query Header {
   allPrismicAbout {
-    edges {
-      node {
-        data {
-          about_me {
-            about_me_content {
-              text
-            }
-            about_me_img {
-              url
-              alt
-            }
-            about_me_title {
-              text
-            }
+    nodes {
+      data {
+        about_me {
+          about_me_content {
+            text
           }
-          education {
-            education_content {
-              text
-            }
-            education_img {
-              url
-              alt
-            }
-            education_title {
-              text
-            }
+          about_me_img {
+            url
+            alt
           }
-          experience {
-            experience_content {
-              text
-            }
-            experience_img {
-              alt
-              url
-            }
-            experience_title {
-              text
-            }
+          about_me_title {
+            text
+          }
+        }
+        education {
+          education_content {
+            text
+          }
+          education_img {
+            alt
+            url
+          }
+          education_title {
+            text
+          }
+        }
+        experience {
+          experience_content {
+            text
+          }
+          experience_img {
+            alt
+            url
+          }
+          experience_title {
+            html
+            text
           }
         }
       }
@@ -122,6 +132,30 @@ query Header {
             phone_number {
               text
             }
+          }
+        }
+      }
+    }
+  }
+  allPrismicAchievements {
+    edges {
+      node {
+        data {
+          achievements_img {
+            alt
+            url
+          }
+          achievements_link {
+            link {
+              url
+            }
+            link_img {
+              alt
+              url
+            }
+          }
+          achievements_title {
+            text
           }
         }
       }

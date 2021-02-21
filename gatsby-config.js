@@ -68,7 +68,8 @@ module.exports = {
         schemas: {
            navigation: require("./custom_types/navigation.json"),
            header: require("./custom_types/header.json"),
-           about: require("./custom_types/about.json")
+           about: require("./custom_types/about.json"),
+           achievements: require("./custom_types/achievements.json")
 
         },
       },
