@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
@@ -85,13 +84,9 @@ const ArtMobile = styled.figure`
 `;
 
 const Title = styled.p`
-  margin-top: 16px;
+  margin-top: 5px;
+  text-align: left;
   color: ${props => props.theme.color.black.regular};
-`;
-
-const Subtitle = styled.p`
-  ${props => props.theme.font_size.small};
-  color: ${props => props.theme.color.black.light};
 `;
 
 export default Skills;
