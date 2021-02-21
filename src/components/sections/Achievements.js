@@ -3,37 +3,88 @@ import styled from 'styled-components';
 import {Link} from 'gatsby'
 import { Section, Container } from '@components/global';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { IconButton } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 
-const Achievements = ({achievementsContent}) => (
- 
-<Section id="brands" accent>
-        <StyledContainer>
-          <div>
-            <h1>{achievementsContent.achievements_title.text}</h1>
-            <LogoGrid>
-                <Link to={achievementsContent.achievements_link.url}>
-                  <img src={achievementsContent.achievements_link_img.url}/>
-                </Link>
-            </LogoGrid>
-          </div>
-          <Art>
-            <img src={achievementsContent.achievements_img.url} />
-          </Art>
-        </StyledContainer>
-      </Section>
-  
-)
 
+
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 250,
+    marginRight: 10,
+    marginBottom: 10,
+  },
+  media: {
+    height: 140,
+  },
+  button: {
+    justifyContent: 'center',
+  }
+});
+
+export default function Achievements({achievementsContent}) {
+
+  const classes = useStyles();
+
+  return (
+    <Section id="brands" accent>
+    <StyledContainer>
+      <div>
+        <h1>{achievementsContent.achievements_title.text}</h1>
+        <LogoGrid>
+      {achievementsContent.achievements_link.map((navItem, index) => {
+        return (
+  <Card  className={classes.root} >
+    <CardActionArea>
+    <CardMedia
+        component="img"
+        alt="alt"
+        image={navItem.link_img.url}
+    />
+    <CardContent>
+      <Typography gutterBottom variant="h5" component="h2">
+      {navItem.link_label.text}
+      </Typography>
+      <Typography variant="body2" color="textSecondary" component="p">
+           {navItem.description.text}
+      </Typography>
+    </CardContent>
+  </CardActionArea>
+  <CardActions >
+  <IconButton aria-label="send" color="primary" href={navItem.link.url}>
+        <SendIcon />
+  </IconButton>
+  </CardActions>
+</Card>
+        )
+      })}
+        </LogoGrid>
+      </div>
+      <Art>
+        <img src={achievementsContent.achievements_img.url} />
+      </Art>
+    </StyledContainer>
+  </Section>
+  )
+}
 
 
 
 const LogoGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 64px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30;
   justify-items: center;
-  margin-top: 96px;
-
+  margin-top: 30px;
   a {
     svg {
       width: 100%;
@@ -72,4 +123,4 @@ const Art = styled.figure`
   }
 `;
 
-export default Achievements;
+

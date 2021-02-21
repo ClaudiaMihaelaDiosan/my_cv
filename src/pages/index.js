@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
   const aboutDocument = data.allPrismicAbout.nodes[0].data
   const achievementsDocument = data.allPrismicAchievements.edges[0].node.data
 
-  console.log(achievementsDocument.achievements_title.text)
+  console.log(achievementsDocument.achievements_link)
 
   const headerContent = {
     profile_image: document.profile_image,
@@ -42,8 +42,8 @@ const IndexPage = ({data}) => {
 
   const achievementsContent = {
     achievements_img: achievementsDocument.achievements_img,
-    achievements_link: achievementsDocument.achievements_link[0].link,
-    achievements_link_img: achievementsDocument.achievements_link[0].link_img,
+    achievements_link: achievementsDocument.achievements_link,
+    //achievements_link_img: achievementsDocument.achievements_link[0].link_img,
     achievements_title: achievementsDocument.achievements_title
 
   }
@@ -152,6 +152,12 @@ query Header {
             link_img {
               alt
               url
+            }
+            link_label {
+              text
+            }
+            description {
+              text
             }
           }
           achievements_title {

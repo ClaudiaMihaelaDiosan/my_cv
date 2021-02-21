@@ -1,48 +1,55 @@
 {
-    "Main" : {
-      "achievements_title" : {
-        "type" : "StructuredText",
-        "config" : {
-          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-          "label" : "achievements_title"
-        }
-      },
-      "achievements_img" : {
-        "type" : "Image",
-        "config" : {
-          "constraint" : { },
-          "thumbnails" : [ ],
-          "label" : "achievements_img"
-        }
-      },
-      "achievements_link" : {
-        "type" : "Group",
-        "config" : {
-          "fields" : {
-            "link_img" : {
-              "type" : "Image",
-              "config" : {
-                "constraint" : { },
-                "thumbnails" : [ ],
-                "label" : "link_img"
-              }
-            },
-            "link_label" : {
-              "type" : "StructuredText",
-              "config" : {
-                "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-                "label" : "link_label"
-              }
-            },
-            "link" : {
-              "type" : "Link",
-              "config" : {
-                "label" : "link"
-              }
+  "Main": {
+    "achievements_title": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "achievements_title"
+      }
+    },
+    "achievements_img": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "achievements_img"
+      }
+    },
+    "achievements_link": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_img": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "link_img"
             }
           },
-          "label" : "achievements_link"
-        }
+          "link_label": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label": "link_label"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "link"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label": "description"
+            }
+          }
+        },
+        "label": "achievements_link"
       }
     }
   }
+}
