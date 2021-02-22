@@ -12,8 +12,7 @@ export default () => (
     <StyledContainer>
     <div>
       <h1>Contact</h1>
-        <Formik name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-        action={process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}
+        <Formik 
     initialValues={{
       name: '',
       email: '',
@@ -52,7 +51,8 @@ export default () => (
     }}
   >
     {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-      <Form >
+      <Form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+      action={process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}>
         <InputField>
           <Input
             as={FastField}
