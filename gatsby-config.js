@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Absurd`,
-        short_name: `absurd`,
+        name: `CV`,
+        short_name: `cv`,
         start_url: `/`,
-        background_color: `#8bd8ed`,
-        theme_color: `#8bd8ed`,
+        background_color: `#5379f6`,
+        theme_color: `#5379f6`,
         display: `minimal-ui`,
-        icon: `static/favicon.svg`,
+        icon: `static/icons/favicon.svg`,
       },
     },
     {

@@ -48,6 +48,11 @@ export default function Achievements({achievementsContent}) {
         alt="alt"
         image={navItem.link_img.url}
     />
+     <CardActions >
+  <IconButton aria-label="send" color="primary" href={navItem.link.url}>
+        <SendIcon />
+  </IconButton>
+  </CardActions>
     <CardContent>
       <Typography gutterBottom variant="h5" component="h2">
       {navItem.link_label.text}
@@ -57,11 +62,6 @@ export default function Achievements({achievementsContent}) {
       </Typography>
     </CardContent>
   </CardActionArea>
-  <CardActions >
-  <IconButton aria-label="send" color="primary" href={navItem.link.url}>
-        <SendIcon />
-  </IconButton>
-  </CardActions>
 </Card>
         )
       })}
