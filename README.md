@@ -1,6 +1,6 @@
-# gatsby-absurd
+# My personal curriculum
 
-A personal cv webpage
+A personal cv webpage based in the gatsby starter [Absurd](https://www.gatsbyjs.com/starters/ajayns/gatsby-absurd/)
 
 ## Installation
 
