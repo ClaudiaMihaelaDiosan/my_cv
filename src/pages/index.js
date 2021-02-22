@@ -17,8 +17,7 @@ const IndexPage = ({data}) => {
   const aboutDocument = data.allPrismicAbout.nodes[0].data
   const achievementsDocument = data.allPrismicAchievements.edges[0].node.data
   const skillsDocument = data.allPrismicSkills.edges[0].node.data
-
- 
+  const contactDocument = data.allPrismicContact.nodes[0].data
 
   const headerContent = {
     profile_image: document.profile_image,
@@ -54,10 +53,10 @@ const IndexPage = ({data}) => {
     skill: skillsDocument.skill
   }
 
-  console.log(skillsContent.skills_img)
-  console.log(skillsContent.skill)
+  const contactContent = {
+    contact_img: contactDocument.contact_img
+  }
  
-
 
   return (
     <Layout>
@@ -66,7 +65,7 @@ const IndexPage = ({data}) => {
     <About aboutContent={aboutContent}/>
     <Achievements achievementsContent={achievementsContent} />
     <Skills skillsContent={skillsContent} />
-    <ContactForm/>
+    <ContactForm contactContent={contactContent} />
   </Layout>
   )
 
@@ -196,6 +195,16 @@ query Header {
           skills_title {
             text
           }
+        }
+      }
+    }
+  }
+  allPrismicContact {
+    nodes {
+      data {
+        contact_img {
+          alt
+          url
         }
       }
     }

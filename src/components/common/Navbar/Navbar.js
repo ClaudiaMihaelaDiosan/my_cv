@@ -6,8 +6,8 @@ import { Container } from '@components/global';
 import {
   Nav,
   NavItem,
-  Brand,
   StyledContainer,
+  DownloadButton,
   NavListWrapper,
   MobileMenu,
   Mobile,
@@ -15,7 +15,8 @@ import {
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
+const NAV_ITEMS = ['Home','About', 'Achievements', 'Skills', 'Contact'];
+
 
 class Navbar extends Component {
   state = {
@@ -38,9 +39,11 @@ class Navbar extends Component {
     </AnchorLink>
   );
 
+
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
+        
         items={NAV_ITEMS.map(item => item.toLowerCase())}
         currentClassName="active"
         mobile={mobile}
@@ -59,7 +62,7 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Claudia</Brand>
+          <DownloadButton href="https://drive.google.com/file/d/1qCK3Dn-jL-6maCVk61AB7lIHJ6dm0EZc/view?usp=sharing"  target="_blank">Download CV</DownloadButton>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
               <MenuIcon />
@@ -79,5 +82,6 @@ class Navbar extends Component {
     );
   }
 }
+
 
 export default Navbar;

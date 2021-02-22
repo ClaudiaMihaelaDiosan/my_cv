@@ -6,7 +6,7 @@ import { Section, Container } from '@components/global';
 
 const Skills = ({skillsContent}) => (
 
-  <Section id="team" accent="secondary">
+  <Section id="skills" accent="secondary">
   <Container style={{ position: 'relative' }}>
     <h1>{skillsContent.skills_title.text}</h1>
     <TeamGrid>

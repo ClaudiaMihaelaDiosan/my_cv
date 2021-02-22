@@ -3,7 +3,7 @@ import { Formik, Field} from 'formik'
 import * as Yup from 'yup';
 import styled from 'styled-components';
 import { Section, Container } from '@components/global';
-import Contact from '@images/contact/contact.png'
+
 
 const encode = (data) => {
   return Object.keys(data)
@@ -11,17 +11,17 @@ const encode = (data) => {
     .join('&')
 }
 
-const ContactForm = () => {
+const ContactForm = ({contactContent}) => {
   return (
     <Section id="contact" accent="primary">
       <StyledContainer>
       <div>
       <h1>Contact</h1>
     <Formik
-      initialValues={{ name: '', email: '', message: '' }}
+      initialValues={{ name: '', email: '', message: '', success: false, }}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        fetch("/?no-cache=1", {                                 //eslint-disable-line
+      onSubmit={(values, { setSubmitting, resetForm, setFieldValue }) => {
+        fetch("/?no-cache=1", {                                
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: encode({
@@ -31,14 +31,17 @@ const ContactForm = () => {
         })
           .then(() => {
             setSubmitting(false)
+            setFieldValue('success', true);
+            setTimeout(() => resetForm(), 6000);  
           })
           .catch(error => {
             console.log(error)
-            alert("Error: Please Try Again!");                            //eslint-disable-line
+            alert("Error: Please Try Again!");                           
             setSubmitting(false)
           })
       }}
       render={({
+        values,
         errors,
         touched,
         isSubmitting,
@@ -75,6 +78,7 @@ const ContactForm = () => {
           </div>
           {touched.message && errors.message && <small className='has-text-danger'>{errors.message}</small>}
         </div>
+        {values.success && (<h4>Your message has been successfully sent</h4>)}
         <div>
           <ContactButton secondary type="submit" disabled={isSubmitting}>Send</ContactButton>
         </div>
@@ -82,7 +86,7 @@ const ContactForm = () => {
     />
     </div>
   <Art>
-  <img src={Contact} alt="Contact image" />
+  <img src={contactContent.contact_img.url} alt={contactContent.contact_img.alt} />
   </Art>
       </StyledContainer>
     </Section>

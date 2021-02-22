@@ -8,7 +8,7 @@ import Phone from '@material-ui/icons/PhoneAndroidOutlined'
 
 const Header = ({headerContent}) => (
 
-      <HeaderWrapper>
+      <HeaderWrapper id='home'>
         <Container>
           <Grid>
             <Art>

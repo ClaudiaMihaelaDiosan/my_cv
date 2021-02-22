@@ -1,0 +1,12 @@
+{
+    "Main": {
+      "contact_img": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "contact_img"
+        }
+      }
+    }
+  }

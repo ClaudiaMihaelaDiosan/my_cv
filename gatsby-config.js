@@ -53,11 +53,11 @@ module.exports = {
       options: {
         repositoryName: 'my-curriculum',
         schemas: {
-           navigation: require("./custom_types/navigation.json"),
            header: require("./custom_types/header.json"),
            about: require("./custom_types/about.json"),
            achievements: require("./custom_types/achievements.json"),
-           skills: require('./custom_types/skills.json')
+           skills: require('./custom_types/skills.json'),
+           contact: require('./custom_types/contact.json')
 
         },
       },

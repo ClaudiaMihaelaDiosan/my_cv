@@ -34,7 +34,7 @@ export default function Achievements({achievementsContent}) {
   const classes = useStyles();
 
   return (
-    <Section id="brands" accent>
+    <Section id="achievements" accent="primary">
     <StyledContainer>
       <div>
         <h1>{achievementsContent.achievements_title.text}</h1>
