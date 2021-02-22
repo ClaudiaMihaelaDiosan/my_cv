@@ -4,15 +4,16 @@ import { graphql } from 'gatsby'
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 
-import Header from '@sections/Header';
-import About from '@sections/About';
-import Achievements from '@sections/Achievements';
-import Skills from '@sections/Skills';
-import ContactForm from '@sections/Contact';
+import Header from '@sections/Header/Header';
+import About from '@sections/About/About';
+import Achievements from '@sections/Achievements/Achievements';
+import Skills from '@sections/Skills/Skills';
+import ContactForm from '@sections/Contact/Contact';
 
 
 const IndexPage = ({data}) => {
   if (!data) return null
+
   const document = data.allPrismicHeader.edges[0].node.data.header[0]
   const aboutDocument = data.allPrismicAbout.nodes[0].data
   const achievementsDocument = data.allPrismicAchievements.edges[0].node.data
@@ -58,6 +59,7 @@ const IndexPage = ({data}) => {
   }
  
 
+
   return (
     <Layout>
     <Navbar />
@@ -72,6 +74,7 @@ const IndexPage = ({data}) => {
 }
 
   
+
 export const query = graphql`
 query Header {
   allPrismicAbout {
@@ -211,10 +214,6 @@ query Header {
   }
 }
 `
-
-
-
-
 
 
 export default IndexPage;

@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Section, Container } from '@components/global';
+import { Section} from '@components/global';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -12,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { IconButton } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
-
+import {LogoGrid, StyledContainer, Art} from './style'
 
 
 const useStyles = makeStyles({
@@ -39,7 +38,7 @@ export default function Achievements({achievementsContent}) {
       <div>
         <h1>{achievementsContent.achievements_title.text}</h1>
         <LogoGrid>
-      {achievementsContent.achievements_link.map((navItem, index) => {
+      {achievementsContent.achievements_link.map((navItem) => {
         return (
   <Card  className={classes.root} >
     <CardActionArea>
@@ -68,57 +67,11 @@ export default function Achievements({achievementsContent}) {
         </LogoGrid>
       </div>
       <Art>
-        <img src={achievementsContent.achievements_img.url} />
+        <img src={achievementsContent.achievements_img.url} alt={achievementsContent.achievements_img.alt} />
       </Art>
     </StyledContainer>
   </Section>
   )
 }
-
-
-
-const LogoGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30;
-  justify-items: center;
-  margin-top: 30px;
-  a {
-    svg {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const StyledContainer = styled(Container)`
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-content: center;
-  }
-`;
-
-const Art = styled.figure`
-  width: 600px;
-  position: absolute;
-  top: 20%;
-  right: 50%;
-
-  @media (max-width: ${props => props.theme.screen.lg}) {
-    top: 0;
-    right: 65%;
-    width: 500px;
-  }
-
-  @media (max-width: ${props => props.theme.screen.md}) {
-    display: none;
-  }
-`;
 
 

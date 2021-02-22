@@ -1,38 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import { Section, Container } from '@components/global';
-
-
-const Skills = ({skillsContent}) => (
-
-  <Section id="skills" accent="secondary">
-  <Container style={{ position: 'relative' }}>
-    <h1>{skillsContent.skills_title.text}</h1>
-    <TeamGrid>
-    {skillsContent.skill.map((navItem, index) => {
-      return (
-        <div>
-          <img src={navItem.skill_img.url} alt={navItem.skill_img.alt} />
-        <Title>{navItem.skill_title.text}</Title>
-      </div>
-
-      )
-    })}
-
-    </TeamGrid>
-    <Art>
-    <img src={skillsContent.skills_img.url} alt={skillsContent.skills_img.alt} />
-    </Art>
-    <ArtMobile>
-    <img src={skillsContent.skills_img.url} alt={skillsContent.skills_img.alt} />
-    </ArtMobile>
-  </Container>
-</Section>
-
-)
-
-const TeamGrid = styled.div`
+export const TeamGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: min-content;
@@ -55,7 +23,7 @@ const TeamGrid = styled.div`
   }
 `;
 
-const Art = styled.figure`
+export const Art = styled.figure`
   width: 800px;
   margin: -80px 0;
   position: absolute;
@@ -71,7 +39,7 @@ const Art = styled.figure`
   }
 `;
 
-const ArtMobile = styled.figure`
+export const ArtMobile = styled.figure`
   width: 100%;
   margin: 0;
   display: none;
@@ -83,10 +51,8 @@ const ArtMobile = styled.figure`
   }
 `;
 
-const Title = styled.p`
+export const Title = styled.p`
   margin-top: 5px;
   text-align: left;
   color: ${props => props.theme.color.black.regular};
 `;
-
-export default Skills;
