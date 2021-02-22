@@ -24,7 +24,6 @@ const ContactForm = () => {
           }),
         })
           .then(() => {
-            navigate('/contact/success')
             setSubmitting(false)
           })
           .catch(error => {
