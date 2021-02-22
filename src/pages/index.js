@@ -8,7 +8,7 @@ import Header from '@sections/Header';
 import About from '@sections/About';
 import Achievements from '@sections/Achievements';
 import Skills from '@sections/Skills';
-import Contact from '@sections/Contact';
+import ContactForm from '@sections/Contact';
 
 
 const IndexPage = ({data}) => {
@@ -66,7 +66,7 @@ const IndexPage = ({data}) => {
     <About aboutContent={aboutContent}/>
     <Achievements achievementsContent={achievementsContent} />
     <Skills skillsContent={skillsContent} />
-    <Contact/>
+    <ContactForm/>
   </Layout>
   )
 
