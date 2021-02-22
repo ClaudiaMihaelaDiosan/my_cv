@@ -51,8 +51,8 @@ export default () => (
     }}
   >
     {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-      <Form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-      action={process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}>
+      <Form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="contact" value="contact"></input>
         <InputField>
           <Input
             as={FastField}
