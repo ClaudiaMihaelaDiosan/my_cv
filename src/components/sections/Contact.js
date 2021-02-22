@@ -51,8 +51,12 @@ export default () => (
     }}
   >
     {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-      <Form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="contact" value="contact"></input>
+      <Form  name="contact"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field">
+         <input type="hidden" name="form-name" value="contact" />
+         <input type="hidden" name="bot-field" />
         <InputField>
           <Input
             as={FastField}
